@@ -17,9 +17,9 @@
 #  define BUFFER_SIZE 10
 # endif
 
-# include <unistd.h> // write/read
-# include <fcntl.h> // open
+# include <fcntl.h>  // open
 # include <stdlib.h> // malloc
+# include <unistd.h> // write/read
 
 /*
 node of the linked list
@@ -28,15 +28,15 @@ node of the linked list
 */
 typedef struct s_list
 {
-    char            *str_buf;
-    struct s_list   *next;
-}   t_list;
+	char			*str_buf;
+	struct s_list	*next;
+}					t_list;
 
-char    *get_next_line(int fd);
-int     is_newline(t_list *list);
-t_list  *find_last_node(t_list *list);
-int     len_to_newline(t_list *list);
-void    copy_str(t_list *list, char *str);
-void    dealloc(t_list **list, t_list *clean_node, char *buf);
-
+char				*get_next_line(int fd);
+int					is_newline(t_list *list);
+t_list				*find_last_node(t_list *list);
+int					len_to_newline(t_list *list);
+void				copy_str(t_list *list, char *str);
+void				dealloc(t_list **list, t_list *clean_node, char *buf);
+void				dealloc_list(t_list **list);
 #endif
